@@ -47,19 +47,17 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        list = []
+        reslut = 0
         flag = 1
         if x < 0:
+            x = -x
             flag = 0
-            x = -x
         while(x != 0):
-            list.append(x % 10)
+            reslut = reslut*10 + x % 10
             x = int(x / 10)
-        for val in list:
-            x = x * 10 + val
         if flag == 0:
-            x = -x
-        if x < -2**31 or x >= 2**31:
-            x = 0
-        return x 
+            reslut = -reslut
+        if reslut < -2**31 or reslut >= 2**31:
+            reslut = 0
+        return reslut
 
