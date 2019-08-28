@@ -11,7 +11,7 @@ public:
         for (int i = 0; i < n; i++)
         {
             char c = '0' + i + 1;
-            v = v + c;
+            v = v + c; 
         }
         
         bt(k, result, v);
@@ -42,13 +42,13 @@ public:
                             }
                             else
                             {
-                                result = result + v[n-j];
+                                result = result + v[2*n-i-j];
                             }   
                         }
                         break;
                     }
                     int temp = (k-1) / count;
-                    k = k % count;
+                    k = (k-1) % count + 1;
                     for (int j = 1; j <= n - i; j++)
                     {
                         result = result + v[j-1];
